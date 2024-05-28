@@ -1,13 +1,31 @@
+interface Props {
+  usuario?: string;
+  senha?: string;
+  email?: string;
+  role?: string;
+  dataCadastro?: Date;
+  ativo?: boolean;
+  idUsuario?: number;
+}
+
 export class Usuario {
-  constructor(
-    private usuario: string,
-    private senha: string,
-    private email: string,
-    private role: string,
-    private dataCadastro: Date,
-    private ativo: boolean,
-    private idUsuario?: number,
-  ) {}
+  private usuario: string;
+  private senha: string;
+  private email: string;
+  private role: string;
+  private dataCadastro: Date;
+  private ativo: boolean;
+  private idUsuario?: number;
+
+  constructor(props: Props = {}) {
+    this.usuario = props.usuario || '';
+    this.senha = props.senha || '';
+    this.email = props.email || '';
+    this.role = props.role || '';
+    this.dataCadastro = props.dataCadastro || new Date();
+    this.ativo = props.ativo || false;
+    this.idUsuario = props.idUsuario;
+  }
 
   getIdUsuario(): number {
     return this.idUsuario;

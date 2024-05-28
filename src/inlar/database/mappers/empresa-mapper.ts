@@ -20,21 +20,21 @@ export class EmpresaMapper {
   }
 
   static fromDatabase(raw: PrismaEmpresa): Empresa {
-    const empresa = new Empresa(
-      raw.IDEMPRESA,
-      raw.NOMEFANTASIA,
-      raw.RAZAOSOCIAL,
-      raw.CNPJ,
-      raw.CONTATO1,
-      raw.CONTATO2,
-      raw.CEP,
-      raw.LOGRADOURO,
-      raw.NUMERO,
-      raw.COMPLEMENTO,
-      raw.BAIRRO,
-      raw.CIDADE,
-      raw.SIGLAESTADO,
-    );
+    const empresa = new Empresa({
+      idEmpresa: raw.IDEMPRESA,
+      nomeFantasia: raw.NOMEFANTASIA,
+      razaoSocial: raw.RAZAOSOCIAL,
+      cnpj: raw.CNPJ,
+      contato1: raw.CONTATO1,
+      contato2: raw.CONTATO2,
+      cep: raw.CEP,
+      logradouro: raw.LOGRADOURO,
+      numero: raw.NUMERO,
+      complemento: raw.COMPLEMENTO,
+      bairro: raw.BAIRRO,
+      cidade: raw.CIDADE,
+      uf: raw.SIGLAESTADO,
+    });
 
     return empresa;
   }

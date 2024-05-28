@@ -1,26 +1,70 @@
+interface Props {
+  nome?: string;
+  dataNascimento?: Date | null;
+  tipoPessoa?: string;
+  genero?: string;
+  cpf?: string;
+  rg?: string;
+  cnpj?: string | null;
+  contato1?: string | null;
+  contato2?: string | null;
+  cep?: string | null;
+  logradouro?: string | null;
+  numero?: string | null;
+  complemento?: string | null;
+  bairro?: string | null;
+  cidade?: string | null;
+  uf?: string | null;
+  observacoes?: string | null;
+  dataCadastro?: Date;
+  ativo?: boolean;
+  idBeneficiario?: number;
+}
+
 export class Beneficiario {
-  constructor(
-    private idBeneficiario: number,
-    private nome: string,
-    private dataNascimento: Date | null,
-    private tipoPessoa: string,
-    private genero: string,
-    private cpf: string,
-    private rg: string,
-    private cnpj: string | null,
-    private contato1: string | null,
-    private contato2: string | null,
-    private cep: string | null,
-    private logradouro: string | null,
-    private numero: string | null,
-    private complemento: string | null,
-    private bairro: string | null,
-    private cidade: string | null,
-    private uf: string | null,
-    private observacoes: string | null,
-    private dataCadastro: Date,
-    private ativo: boolean,
-  ) {}
+  private nome: string;
+  private dataNascimento: Date | null;
+  private tipoPessoa: string;
+  private genero: string;
+  private cpf: string;
+  private rg: string;
+  private cnpj: string | null;
+  private contato1: string | null;
+  private contato2: string | null;
+  private cep: string | null;
+  private logradouro: string | null;
+  private numero: string | null;
+  private complemento: string | null;
+  private bairro: string | null;
+  private cidade: string | null;
+  private uf: string | null;
+  private observacoes: string | null;
+  private dataCadastro: Date;
+  private ativo: boolean;
+  private idBeneficiario: number;
+
+  constructor(props: Props = {}) {
+    this.idBeneficiario = props.idBeneficiario;
+    this.nome = props.nome || '';
+    this.dataNascimento = props.dataNascimento || null;
+    this.tipoPessoa = props.tipoPessoa || '';
+    this.genero = props.genero || '';
+    this.cpf = props.cpf || '';
+    this.rg = props.rg || '';
+    this.cnpj = props.cnpj || null;
+    this.contato1 = props.contato1 || null;
+    this.contato2 = props.contato2 || null;
+    this.cep = props.cep || null;
+    this.logradouro = props.logradouro || null;
+    this.numero = props.numero || null;
+    this.complemento = props.complemento || null;
+    this.bairro = props.bairro || null;
+    this.cidade = props.cidade || null;
+    this.uf = props.uf || null;
+    this.observacoes = props.observacoes || null;
+    this.dataCadastro = props.dataCadastro || new Date();
+    this.ativo = props.ativo || false;
+  }
 
   getIdBeneficiario(): number {
     return this.idBeneficiario;

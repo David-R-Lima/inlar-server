@@ -13,14 +13,14 @@ export class CreateUsuario {
   constructor(private usuarioRepositorio: UsuarioRepositorio) {}
 
   async execute(data: Request): Promise<Usuario | null> {
-    const usuario = new Usuario(
-      data.usuario,
-      data.senha,
-      data.email,
-      'U',
-      new Date(),
-      true,
-    );
+    const usuario = new Usuario({
+      usuario: data.usuario,
+      email: data.email,
+      senha: data.senha,
+      role: 'U',
+      dataCadastro: new Date(),
+      ativo: true,
+    });
 
     try {
       const res = this.usuarioRepositorio.create(usuario);

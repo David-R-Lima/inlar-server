@@ -23,25 +23,25 @@ export class DoadorMapper {
     };
   }
   static fromDatabase(raw: PrismaDoador): Doador {
-    const doador = new Doador(
-      raw.IDDOADOR,
-      raw.NOME,
-      raw.TIPOPESSOA,
-      raw.CPF,
-      raw.CNPJ,
-      raw.CONTATO1,
-      raw.CONTATO2,
-      raw.CEP,
-      raw.LOGRADOUDO,
-      raw.NUMERO,
-      raw.COMPLEMENTO,
-      raw.BAIRRO,
-      raw.CIDADE,
-      raw.SIGLAESTADO,
-      raw.OBSERVACOES,
-      raw.DATACAD,
-      raw.ATIVO,
-    );
+    const doador = new Doador({
+      nome: raw.NOME,
+      tipoPessoa: raw.TIPOPESSOA,
+      cpf: raw.CPF,
+      cnpj: raw.CNPJ,
+      contato1: raw.CONTATO1,
+      contato2: raw.CONTATO2,
+      cep: raw.CEP,
+      logradouro: raw.LOGRADOUDO,
+      numero: raw.NUMERO,
+      complemento: raw.COMPLEMENTO,
+      bairro: raw.BAIRRO,
+      cidade: raw.CIDADE,
+      uf: raw.SIGLAESTADO,
+      observacoes: raw.OBSERVACOES,
+      dataCadastro: raw.DATACAD,
+      ativo: raw.ATIVO,
+      idDoador: raw.IDDOADOR,
+    });
 
     return doador;
   }

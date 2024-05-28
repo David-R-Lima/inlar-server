@@ -13,15 +13,15 @@ export class UsuarioMapper {
     };
   }
   static fromDatabase(raw: PrismaUsuario): Usuario {
-    const usuario = new Usuario(
-      raw.USUARIO,
-      raw.SENHA,
-      raw.EMAIL,
-      raw.ROLE,
-      raw.DATACAD,
-      raw.ATIVO,
-      raw.IDUSUARIO,
-    );
+    const usuario = new Usuario({
+      idUsuario: raw.IDUSUARIO,
+      usuario: raw.USUARIO,
+      senha: raw.SENHA,
+      email: raw.EMAIL,
+      role: raw.ROLE,
+      dataCadastro: raw.DATACAD,
+      ativo: raw.ATIVO,
+    });
 
     return usuario;
   }

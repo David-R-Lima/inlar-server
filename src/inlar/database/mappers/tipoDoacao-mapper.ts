@@ -12,12 +12,12 @@ export class TipoDoacaoMapper {
     };
   }
   static fromDatabase(raw: PrismaTipoDoacao): TipoDoacao {
-    const tipoDoacao = new TipoDoacao(
-      raw.IDTIPODOACAO,
-      raw.DESCRICAO,
-      raw.DATACAD,
-      raw.ATIVO,
-    );
+    const tipoDoacao = new TipoDoacao({
+      idTipoDoacao: raw.IDTIPODOACAO,
+      descricao: raw.DESCRICAO,
+      dataCadastro: raw.DATACAD,
+      ativo: raw.ATIVO,
+    });
 
     return tipoDoacao;
   }

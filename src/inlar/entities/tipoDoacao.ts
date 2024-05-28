@@ -1,10 +1,22 @@
+interface Props {
+  descricao?: string;
+  dataCadastro?: Date;
+  ativo?: boolean;
+  idTipoDoacao?: number;
+}
+
 export class TipoDoacao {
-  constructor(
-    private idTipoDoacao: number,
-    private descricao: string,
-    private dataCadastro: Date,
-    private ativo: boolean,
-  ) {}
+  private idTipoDoacao: number;
+  private descricao: string;
+  private dataCadastro: Date;
+  private ativo: boolean;
+
+  constructor(props: Props = {}) {
+    this.descricao = props.descricao || '';
+    this.dataCadastro = props.dataCadastro || new Date();
+    this.ativo = props.ativo || false;
+    this.idTipoDoacao = props.idTipoDoacao;
+  }
 
   getidTipoDoacao(): number {
     return this.idTipoDoacao;

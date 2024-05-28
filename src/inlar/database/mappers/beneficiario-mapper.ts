@@ -29,28 +29,28 @@ export class BeneficiarioMapper {
   }
 
   static fromDatabase(raw: PrismaBeneficiario): Beneficiario {
-    const beneficiario = new Beneficiario(
-      raw.IDBENEFICIARIO,
-      raw.NOME,
-      raw.DATANASC,
-      raw.TIPOPESSOA,
-      raw.GENERO,
-      raw.RG,
-      raw.CPF,
-      raw.CNPJ,
-      raw.CONTATO1,
-      raw.CONTATO2,
-      raw.CEP,
-      raw.LOGRADOUDO,
-      raw.NUMERO,
-      raw.COMPLEMENTO,
-      raw.BAIRRO,
-      raw.CIDADE,
-      raw.SIGLAESTADO,
-      raw.OBSERVACOES,
-      raw.DATACAD,
-      raw.ATIVO,
-    );
+    const beneficiario = new Beneficiario({
+      nome: raw.NOME,
+      dataNascimento: raw.DATANASC,
+      tipoPessoa: raw.TIPOPESSOA,
+      genero: raw.GENERO,
+      rg: raw.RG,
+      cpf: raw.CPF,
+      cnpj: raw.CNPJ,
+      contato1: raw.CONTATO1,
+      contato2: raw.CONTATO2,
+      cep: raw.CEP,
+      logradouro: raw.LOGRADOUDO,
+      numero: raw.NUMERO,
+      complemento: raw.COMPLEMENTO,
+      bairro: raw.BAIRRO,
+      cidade: raw.CIDADE,
+      uf: raw.SIGLAESTADO,
+      observacoes: raw.OBSERVACOES,
+      dataCadastro: raw.DATACAD,
+      ativo: raw.ATIVO,
+      idBeneficiario: raw.IDBENEFICIARIO,
+    });
 
     return beneficiario;
   }

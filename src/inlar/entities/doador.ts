@@ -1,23 +1,61 @@
+interface Props {
+  idDoador?: number;
+  nome?: string;
+  tipoPessoa?: string;
+  cpf?: string;
+  cnpj?: string | null;
+  contato1?: string | null;
+  contato2?: string | null;
+  cep?: string | null;
+  logradouro?: string | null;
+  numero?: string | null;
+  complemento?: string | null;
+  bairro?: string | null;
+  cidade?: string | null;
+  uf?: string | null;
+  observacoes?: string | null;
+  dataCadastro?: Date;
+  ativo?: boolean;
+}
+
 export class Doador {
-  constructor(
-    private idDoador: number,
-    private nome: string,
-    private tipoPessoa: string,
-    private cpf: string,
-    private cnpj: string | null,
-    private contato1: string | null,
-    private contato2: string | null,
-    private cep: string | null,
-    private logradouro: string | null,
-    private numero: string | null,
-    private complemento: string | null,
-    private bairro: string | null,
-    private cidade: string | null,
-    private uf: string | null,
-    private observacoes: string | null,
-    private dataCadastro: Date,
-    private ativo: boolean,
-  ) {}
+  private nome: string;
+  private tipoPessoa: string;
+  private cpf: string;
+  private cnpj: string | null;
+  private contato1: string | null;
+  private contato2: string | null;
+  private cep: string | null;
+  private logradouro: string | null;
+  private numero: string | null;
+  private complemento: string | null;
+  private bairro: string | null;
+  private cidade: string | null;
+  private uf: string | null;
+  private observacoes: string | null;
+  private dataCadastro: Date;
+  private ativo: boolean;
+  private idDoador: number;
+
+  constructor(props: Props = {}) {
+    this.nome = props.nome || '';
+    this.tipoPessoa = props.tipoPessoa || '';
+    this.cpf = props.cpf || '';
+    this.cnpj = props.cnpj || null;
+    this.contato1 = props.contato1 || null;
+    this.contato2 = props.contato2 || null;
+    this.cep = props.cep || null;
+    this.logradouro = props.logradouro || null;
+    this.numero = props.numero || null;
+    this.complemento = props.complemento || null;
+    this.bairro = props.bairro || null;
+    this.cidade = props.cidade || null;
+    this.uf = props.uf || null;
+    this.observacoes = props.observacoes || null;
+    this.dataCadastro = props.dataCadastro || new Date();
+    this.ativo = props.ativo || false;
+    this.idDoador = props.idDoador;
+  }
 
   getIdDoador(): number {
     return this.idDoador;
