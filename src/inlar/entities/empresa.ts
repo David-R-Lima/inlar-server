@@ -93,7 +93,4 @@ export class Empresa {
   setUf(uf?: string) {
     this.uf = uf;
   }
-  getObservacoes(): string {
-    return this.observacoes;
-  }
 }
