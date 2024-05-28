@@ -14,13 +14,13 @@ export class UsuarioMapper {
   }
   static fromDatabase(raw: PrismaUsuario): Usuario {
     const usuario = new Usuario(
-      raw.IDUSUARIO,
       raw.USUARIO,
       raw.SENHA,
       raw.EMAIL,
       raw.ROLE,
       raw.DATACAD,
       raw.ATIVO,
+      raw.IDUSUARIO,
     );
 
     return usuario;

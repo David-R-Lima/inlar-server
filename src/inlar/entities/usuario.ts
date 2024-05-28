@@ -1,12 +1,12 @@
 export class Usuario {
   constructor(
-    private idUsuario: number,
     private usuario: string,
     private senha: string,
     private email: string,
     private role: string,
     private dataCadastro: Date,
     private ativo: boolean,
+    private idUsuario?: number,
   ) {}
 
   getIdUsuario(): number {
