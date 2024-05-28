@@ -1,4 +1,4 @@
-export interface Props {
+interface Props {
   nomeFantasia?: string;
   razaoSocial?: string;
   cnpj?: string;
