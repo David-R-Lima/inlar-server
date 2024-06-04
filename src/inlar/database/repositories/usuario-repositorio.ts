@@ -17,7 +17,7 @@ export class UsuarioRepositorio {
     return UsuarioMapper.fromDatabase(prismaUsuario);
   }
 
-  async findByEmail(idUsuario: number, email: string): Promise<Usuario> {
+  async findByEmail(idUsuario: number, email: string): Promise<Usuario | null> {
     const prismaUsuario = await this.prisma.usuario.findUnique({
       where: {
         IDUSUARIO: idUsuario,
@@ -25,10 +25,14 @@ export class UsuarioRepositorio {
       },
     });
 
-    return UsuarioMapper.fromDatabase(prismaUsuario);
+    if (prismaUsuario) {
+      return UsuarioMapper.fromDatabase(prismaUsuario);
+    }
+
+    return null;
   }
 
-  async update(idUsuario: number, usuario: Usuario): Promise<Usuario> {
+  async update(idUsuario: number, usuario: Usuario): Promise<Usuario | null> {
     const data = UsuarioMapper.toDatabase(usuario);
 
     const prismaUsuario = await this.prisma.usuario.update({
@@ -38,6 +42,10 @@ export class UsuarioRepositorio {
       data,
     });
 
-    return UsuarioMapper.fromDatabase(prismaUsuario);
+    if (prismaUsuario) {
+      return UsuarioMapper.fromDatabase(prismaUsuario);
+    }
+
+    return null;
   }
 }
