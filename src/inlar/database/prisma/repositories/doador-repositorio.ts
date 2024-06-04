@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma.service';
 import { Doador } from 'src/inlar/entities/doador';
 import { DoadorMapper } from '../mappers/doador-mapper';
 

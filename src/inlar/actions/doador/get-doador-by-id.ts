@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DoadorRepositorio } from 'src/inlar/database/repositories/doador-repositorio';
+import { DoadorRepositorio } from 'src/inlar/database/prisma/repositories/doador-repositorio';
 import { Doador } from 'src/inlar/entities/doador';
 
 interface Request {

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UsuarioRepositorio } from 'src/inlar/database/repositories/usuario-repositorio';
+import { UsuarioRepositorio } from 'src/inlar/database/prisma/repositories/usuario-repositorio';
 import { Usuario } from 'src/inlar/entities/usuario';
 
 interface Request {
