@@ -47,4 +47,13 @@ export class DoadorRepositorio {
 
     return null;
   }
+
+  async findMany(page: number): Promise<Doador[]> {
+    const prismaDoadores = await this.prisma.doador.findMany({
+      take: 10,
+      skip: (page - 1) * 10,
+    });
+
+    return prismaDoadores.map(DoadorMapper.fromDatabase);
+  }
 }

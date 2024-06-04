@@ -8,15 +8,24 @@ import { CreateDoadorController } from './controllers/doador/create-doador-contr
 import { GetDoadorByIdController } from './controllers/doador/get-doador-by-id-controller';
 import { UpdateDoador } from 'src/inlar/actions/doador/update-doador';
 import { UpdateDoadorController } from './controllers/doador/update-doador-controller';
+import { GetDoadoresByPage } from 'src/inlar/actions/doador/get-doadores-by-page';
+import { GetDoadoresByPageController } from './controllers/doador/get-doadores-by-page-controller';
 
 @Module({
   imports: [PrismaModule],
-  providers: [CreateUsuario, CreateDoador, GetDoadorById, UpdateDoador],
+  providers: [
+    CreateUsuario,
+    CreateDoador,
+    GetDoadorById,
+    UpdateDoador,
+    GetDoadoresByPage,
+  ],
   controllers: [
     CreateUsuarioController,
     CreateDoadorController,
     GetDoadorByIdController,
     UpdateDoadorController,
+    GetDoadoresByPageController,
   ],
 })
 export class HttpModule {}
