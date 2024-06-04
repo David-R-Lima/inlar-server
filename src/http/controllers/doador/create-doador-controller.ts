@@ -18,16 +18,40 @@ const squema = z.object({
     required_error: 'Field: {tipo_pessoa} is required',
   }),
   cpf: z.string().max(11, { message: 'Cannot exceed 11 caracters' }).optional(),
-  cnpj: z.string().optional(),
-  contato1: z.string().optional(),
-  contato2: z.string().optional(),
-  cep: z.string().optional(),
-  logradouro: z.string().optional(),
-  numero: z.string().optional(),
-  complemento: z.string().optional(),
-  bairro: z.string().optional(),
-  cidade: z.string().optional(),
-  uf: z.string().optional(),
+  cnpj: z
+    .string()
+    .max(14, { message: 'Cannot exceed 14 caracters' })
+    .optional(),
+  contato1: z
+    .string()
+    .max(11, { message: 'Cannot exceed 11 caracters' })
+    .optional(),
+  contato2: z
+    .string()
+    .max(11, { message: 'Cannot exceed 11 caracters' })
+    .optional(),
+  cep: z.string().max(8, { message: 'Cannot exceed 8 caracters' }).optional(),
+  logradouro: z
+    .string()
+    .max(255, { message: 'Cannot exceed 255 caracters' })
+    .optional(),
+  numero: z
+    .string()
+    .max(10, { message: 'Cannot exceed 10 caracters' })
+    .optional(),
+  complemento: z
+    .string()
+    .max(100, { message: 'Cannot exceed 100 caracters' })
+    .optional(),
+  bairro: z
+    .string()
+    .max(100, { message: 'Cannot exceed 100 caracters' })
+    .optional(),
+  cidade: z
+    .string()
+    .max(100, { message: 'Cannot exceed 100 caracters' })
+    .optional(),
+  uf: z.string().max(2, { message: 'Cannot exceed 2 caracters' }).optional(),
   observacoes: z.string().optional(),
 });
 
