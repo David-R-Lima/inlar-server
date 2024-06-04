@@ -23,7 +23,7 @@ export class CreateUsuario {
     });
 
     try {
-      const res = this.usuarioRepositorio.create(usuario);
+      const res = await this.usuarioRepositorio.create(usuario);
 
       return res;
     } catch (error) {
